@@ -4,17 +4,25 @@
 
       <h1 class="weather-app__title">Check the weather</h1>
 
-      <!-- Search City -->
-      <form class="form weather-app__form">
+      <!-- NOTE: 'v-on:submit.prevent' adds event listener and prevents default reload of page -->
+      
+      <form 
+        class="form weather-app__form"
+        v-on:submit.prevent="getWeather"
+      >
         <label class="hidden" for="search">
           Search for a city
         </label>
         <input
+          v-model="search"
           id="search"
           type="text"
-          class="form-input"
+          class="form__input"
           placeholder="Enter a city"
         />
+        <button class="form__button">
+          Submit
+        </button>
         
       </form>
 
@@ -24,7 +32,7 @@
         <!-- Background Images to Go Here -->
 
         <div class="card__header">
-          <h2 class="card__city">{{ weather.cityName }}</h2>
+          <h2 class="card__city">{{ weather.city }}</h2>
           <p class="card__country">{{ weather.country }}</p>
         </div>
 
@@ -54,8 +62,9 @@
 export default {
   data() {
     return {
+      search: "",
       weather: {
-        cityName: "Exeter",
+        city: "Exeter",
         country: "UK",
         temp: 3,
         description: "Light Rain",
@@ -63,6 +72,19 @@ export default {
         humidity: 30
       }
     };
+  },
+  methods: {
+    // this method is called on submitting the form
+    getWeather: async function() {
+      // API call
+      const key = "4868d9b64fe1dff53046fbcd4a8b136a";
+      const baseURL = `http://api.openweathermap.org/data/2.5/weather?q=${this.search}&appid=${key}&units=metric`;
+      const response = await fetch(baseURL);
+      const data = await response.json();
+      console.log(data);
+      // reset to blank field
+      this.search = ""
+    }
   }
 }
 </script>
