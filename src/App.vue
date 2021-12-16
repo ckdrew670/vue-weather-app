@@ -2,16 +2,22 @@
   <main id="main">
     <div class="container weather-app">
 
-      <h1 class="weather-app__title">What's the weather like in </h1>
+      <h1 class="weather-app__title">Check the weather</h1>
 
       <!-- Search City -->
       <form class="weather-app__form">
+        <label class="hidden" for="search">
+          Search for a city
+        </label>
         <input
+          id="search"
           type="text"
           class="weather-app__form-input"
           placeholder="Enter a city"
         />
+        
       </form>
+
 
       <!-- Results Card -->
       <section class="weather-app__card">
