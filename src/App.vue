@@ -5,14 +5,14 @@
       <h1 class="weather-app__title">Check the weather</h1>
 
       <!-- Search City -->
-      <form class="weather-app__form">
+      <form class="form weather-app__form">
         <label class="hidden" for="search">
           Search for a city
         </label>
         <input
           id="search"
           type="text"
-          class="weather-app__form-input"
+          class="form-input"
           placeholder="Enter a city"
         />
         
@@ -20,27 +20,27 @@
 
 
       <!-- Results Card -->
-      <section class="weather-app__card">
+      <section class="card weather-app__card">
         <!-- Background Images to Go Here -->
 
-        <div class="weather-app__card__header">
-          <h2 class="weather-app__card__city">Bristol</h2>
-          <p class="weather-app__card__country">UK</p>
+        <div class="card__header">
+          <h2 class="card__city">Bristol</h2>
+          <p class="card__country">UK</p>
         </div>
 
-        <div class="weather-app__card__body">
-          <p class="weather-app__card__temp">21&deg;C</p>
-          <p class="weather-app__card__summary">Light rain</p>
+        <div class="card__body">
+          <p class="card__temp">21&deg;C</p>
+          <p class="card__summary">Light rain</p>
         </div>
 
-        <div class="weather-app__card__footer">
-          <div class="weather-app__card__feels-like">
+        <div class="card__footer">
+          <div class="card__feels-like">
             <h3>Feels like</h3>
-            <p class="weather-app__card__feels-like__temp">21&deg;C</p>
+            <p class="card__feels-like__temp">21&deg;C</p>
           </div>
-          <div class="weather-app__card__humidity">
+          <div class="card__humidity">
             <h3>Humidity</h3>
-            <p class="weather-app__card__humidity-percentage">70%</p>
+            <p class="card__humidity-percentage">70%</p>
           </div>
         </div>
       </section>

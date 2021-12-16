@@ -1,0 +1,8 @@
+.form {
+	&-input {
+		width: calc(100% - 2rem);
+		border-radius: 10px;
+		border: 1px solid $brand-grey;
+		padding: 1rem;
+	}
+}
