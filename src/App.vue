@@ -77,7 +77,7 @@ export default {
     // this method is called on submitting the form
     getWeather: async function() {
       // API call
-      const baseURL = `http://api.openweathermap.org/data/2.5/weather?q=${this.search}&appid=${process.env.API_KEY}&units=metric`;,
+      const baseURL = `http://api.openweathermap.org/data/2.5/weather?q=${this.search}&appid=${process.env.VUE_APP_KEY}&units=metric`;
       const response = await fetch(baseURL);
       const data = await response.json();
       console.log(data);
